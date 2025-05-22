@@ -1,0 +1,7 @@
+streamlit
+pandas
+scikit-learn
+pulp
+joblib
+fpdf
+requests
