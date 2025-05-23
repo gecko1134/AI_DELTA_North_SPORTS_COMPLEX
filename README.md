@@ -1,3 +1,2 @@
-# SportAI Complete System
-
-Includes all tools, dashboards, and enhancements for launch.
+# SportAI Suite
+Streamlit-ready deployment with AI modules.
