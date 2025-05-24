@@ -1,14 +1,24 @@
 
 import os
 import sys
-import streamlit as st
+try:
+    import streamlit as st
+except ModuleNotFoundError as e:
+    raise ModuleNotFoundError(
+        "streamlit is required to run this app. Install dependencies via 'pip install -r requirements.txt'."
+    ) from e
 import json
 
 BASE_DIR = os.path.dirname(__file__)
 if BASE_DIR not in sys.path:
     sys.path.insert(0, BASE_DIR)
 
-from modules.ai.demand_forecasting import DemandForecaster
+try:
+    from demand_forecasting import DemandForecaster
+except ModuleNotFoundError as e:
+    raise ModuleNotFoundError(
+        "Required ML dependencies are missing. Install them via 'pip install -r requirements.txt'."
+    ) from e
 
 with open(os.path.join(BASE_DIR, 'users.json')) as f:
     users = json.load(f)
@@ -231,7 +241,12 @@ import tournament_scheduler
 import international_team_portal
 import esports_manager
 import adaptive_sports_center
-import streamlit as st
+try:
+    import streamlit as st
+except ModuleNotFoundError as e:
+    raise ModuleNotFoundError(
+        "streamlit is required to run this app. Install dependencies via 'pip install -r requirements.txt'."
+    ) from e
 import json
 import auth
 import ai_event_forecast
@@ -483,10 +498,20 @@ BASE_DIR = os.path.dirname(__file__)
 if BASE_DIR not in sys.path:
     sys.path.insert(0, BASE_DIR)
 
-import streamlit as st
+try:
+    import streamlit as st
+except ModuleNotFoundError as e:
+    raise ModuleNotFoundError(
+        "streamlit is required to run this app. Install dependencies via 'pip install -r requirements.txt'."
+    ) from e
 import json
 
-from modules.ai.demand_forecasting import DemandForecaster
+try:
+    from demand_forecasting import DemandForecaster
+except ModuleNotFoundError as e:
+    raise ModuleNotFoundError(
+        "Required ML dependencies are missing. Install them via 'pip install -r requirements.txt'."
+    ) from e
 
 with open(os.path.join(BASE_DIR, 'users.json')) as f:
     users = json.load(f)
